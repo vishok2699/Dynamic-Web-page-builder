@@ -60,11 +60,15 @@ function processJson()
 
 function pushCodetoGit(){
 
-	var email = "sureshvijaykumar1996@gmail.com";
-	var token = "token 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";
-	var username = "vijaykumar151096";
 
-	var url = "https://api.github.com/repos/vijaykumar151096/htmlconstructor/contents/src/Templates/response.html";
+
+	var email = "vishok.s99@gmail.com";
+	//https://github.com/settings/tokens/new
+	var token = "token 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";
+	var username = "vishok2699";
+	var filename = "login.html";
+
+	var url = "https://api.github.com/repos/vishok2699/Dynamic-Web-page-builder/contents/src/Response/" + filename;
 	var xhr = new XMLHttpRequest();
 	xhr.open("PUT", url);
 	var doc_content = document.getElementById('outputhtml').innerHTML;
