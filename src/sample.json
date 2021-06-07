@@ -1,0 +1,67 @@
+{
+	"ActionDisplayName": "Login",
+	"Attributes": [
+		{
+			"name": "Name",
+			"value": "Vishok Kumar",
+			"type" : "input"
+		},
+		{
+			"name": "username",
+			"value": "vk02",
+			"type" : "input"
+		},
+		{
+			"name": "password",
+			"value": "password",
+			"type" : "password"
+		},
+		{
+			"name": "userType",
+			"type" : "dropdown",
+			"dropdownvalues": [
+				{
+					"displayvalue": "Guest",
+					"value": "guest"
+				},
+				{
+					"displayvalue": "Admin",
+					"value": "admin"
+				}
+			]
+		},
+		{
+			"name": "Gender",
+			"type" : "radio",
+			"options": [
+				{
+					"displayvalue": "Male",
+					"value": "male"
+				},
+				{
+					"displayvalue": "Female",
+					"value": "female"
+				},
+				{
+					"displayvalue": "Other",
+					"value": "other"
+				}
+			]
+		},
+		{
+			"name": "Hobbies",
+			"type" : "checkbox",
+			"options": [
+				{
+					"displayvalue": "Playing",
+					"value": "playing"
+				},
+				{
+					"displayvalue": "Reading",
+					"value": "Reading"
+				}
+			]
+		}
+
+	]
+}
