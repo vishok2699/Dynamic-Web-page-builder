@@ -11,10 +11,13 @@ class Input extends React.Component {
   		return (
         <div>
       		<div>
-      			<span>{this.props.name}</span><pre></pre>
-      			<input type="text" value={this.props.value} />
+      			<div class="bo">
+      				{this.props.name}
+      			</div>
+      			<pre></pre>
+      				<input type="text" value={this.props.value} size={this.props.size}/>
       		</div>
-          <br/>
+         <br/>
         </div>
     	);
   	}

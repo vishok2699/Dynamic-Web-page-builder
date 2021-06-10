@@ -45,30 +45,76 @@
 }
 
 
-.split {
-  height: 100%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
+.hi {
+ width:500px;
+background:#53c2bc;
+padding:30px;
+background:rgba(83, 194, 188,0.8);
+border-radius:10px;
+margin:10px auto;
 }
 
-.left {
-  left: 0;
+.header {
   background-color: white;
+  font-family: Georgia, serif;;
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  box-shadow: -13px -7px 17px 0px;
+}
+.side {
+  display: block;
+ background-color: black;
+ width: 25%;
+ }
+.left {
+  margin-left:25%
 }
 
 .right {
   right: 0;
   background-color: white;
 }
+.nb{
+  width: 100%;
+  background-color: #938171;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.sidenav {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    overflow: auto;
+    width: 15%;
+    box-shadow: -6px 20px 20px 0px;
+}
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  display: block;
+  
+}
+.sidebar {
+  width: 100%;
+  display: block;
+  padding: 8px 16px;
+  text-align: left;
+  border: none;
+  white-space: normal;
+  float: none;
+  outline: 0;
+  width: 20%;
+}
 
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+.sidebar :hover{
+    color: #000;
+    background-color: #f1f1f1;
 }

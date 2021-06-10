@@ -10,7 +10,7 @@ class Button extends React.Component {
   	render() {
   		return (
     		<div>
-          <button type="button" id="{this.props.ActionDisplayName}_button">{this.props.ActionDisplayName}</button>
+          		<button type="button"  class="sub" id="{this.props.ActionDisplayName}_button">{this.props.ActionDisplayName}</button>
     		</div>
     	);
   	}

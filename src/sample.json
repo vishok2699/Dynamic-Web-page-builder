@@ -4,17 +4,20 @@
 		{
 			"name": "Name",
 			"value": "Vishok Kumar",
-			"type" : "input"
+			"type" : "input",
+			"size": "10"
 		},
 		{
 			"name": "username",
 			"value": "vk02",
-			"type" : "input"
+			"type" : "input",
+			"size": "10"
 		},
 		{
 			"name": "password",
 			"value": "password",
-			"type" : "password"
+			"type" : "password",
+			"size": "10"
 		},
 		{
 			"name": "userType",
