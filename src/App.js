@@ -42,7 +42,7 @@ function App() {
 
 function getJSON(){
 	return {
-		"ActionDisplayName": "Login",
+		"ActionDisplayName": "SignIn",
 	"Attributes": [
 		{
 			"name": "Name",
@@ -50,68 +50,15 @@ function getJSON(){
 			"type" : "password"
 		},
 		{
-			"name": "username",
-			"value": "vk02",
-			"type" : "input"
-		},
-		{
 			"name": "password",
 			"value": "password",
 			"type" : "password"
-		},
-		{
-			"name": "userType",
-			"type" : "dropdown",
-			"dropdownvalues": [
-				{
-					"displayvalue": "Guest",
-					"value": "guest"
-				},
-				{
-					"displayvalue": "Admin",
-					"value": "admin"
-				}
-			]
-		},
-		{
-			"name": "Gender",
-			"type" : "radio",
-			"options": [
-				{
-					"displayvalue": "Male",
-					"value": "male"
-				},
-				{
-					"displayvalue": "Female",
-					"value": "female"
-				},
-				{
-					"displayvalue": "Other",
-					"value": "other"
-				}
-			]
-		},
-		{
-			"name": "Hobbies",
-			"type" : "checkbox",
-			"options": [
-				{
-					"displayvalue": "Playing",
-					"value": "playing"
-				},
-				{
-					"displayvalue": "Reading",
-					"value": "Reading"
-				}
-			]
 		}
-
 	]
 };
 }
 
 function renderPage(page){
-		debugger;
 		if(page === 'customize'){
 				document.getElementById('inputjson').classList.remove('dN');
 				document.getElementById('gitpush').classList.remove('dN');
@@ -139,7 +86,7 @@ function getInputJson(){
 function processJson()
 {
 	try{
-		debugger;
+
 		document.getElementById('outputhtml').innerHTML = "";
 		var complete_structure = getInputJson();
 
@@ -165,12 +112,10 @@ function processJson()
 
 function pushCodetoGit(){
 
-
-
-	var email = "vishok.s99@gmail.com";
-	//https://github.com/settings/tokens/new  public : repo
-	var token = "token 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";
-	var username = "vishok2699";
+	var repoInfo = getGITRepoInformation();
+	var email = repoInfo.email;
+	var token = repoInfo.token;
+	var username = repoInfo.username;
 	var filename = (getInputJson()).ActionDisplayName + ".html";
 
 	var url = "https://api.github.com/repos/vishok2699/Dynamic-Web-page-builder/contents/src/Response/" + filename;
@@ -186,7 +131,7 @@ function pushCodetoGit(){
 	xhr.onreadystatechange = function () {
 	   if (xhr.readyState === 4) {
 	      console.log(xhr.status);
-	      window.alert(xhr.responseText);
+	      window.alert("Successfully pushed, try in Existing window after few minutes");
 	   }};
 
 	var data = {
@@ -206,13 +151,25 @@ function pushCodetoGit(){
 
 }
 
+function getGITRepoInformation(){
+
+	//https://github.com/settings/tokens/new  public : repo
+	var repoInfo = {};
+	repoInfo.email = "vishok.s99@gmail.com";
+	repoInfo.token = "token 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";
+	repoInfo.username = "vishok2699";	
+	return repoInfo;
+}
+
+
+
+
 function getFilesContentsFromGIT(){
 
-	debugger;
-	var email = "vishok.s99@gmail.com";
-	//https://github.com/settings/tokens/new  public : repo
-	var token = "token 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";
-	var username = "vishok2699";	
+	var repoInfo = getGITRepoInformation();
+	var email = repoInfo.email;
+	var token = repoInfo.token;
+	var username = repoInfo.username;
 	var filename = document.getElementById('files').value;
 
 	var url = "https://api.github.com/repos/vishok2699/Dynamic-Web-page-builder/contents/src/Response/" + filename ;
@@ -234,8 +191,7 @@ function getFilesContentsFromGIT(){
 	      document.getElementById('outputhtml').innerHTML = window.atob(content_resp);
 	      document.getElementById('getfile').classList.add('dN');
 	   }};
-
-	var data = {
+	   var data = {
 	    "message": "Response HTML Constructed",
 	    "content": content ,
 	    "committer": {
@@ -249,7 +205,6 @@ function getFilesContentsFromGIT(){
 	};
 
 	xhr.send(JSON.stringify(data) );
-
 }
 
 
@@ -257,11 +212,10 @@ function getFilesContentsFromGIT(){
 
 function getFilesFromGIT(){
 
-	var email = "vishok.s99@gmail.com";
-	//https://github.com/settings/tokens/new  public : repo
-	var token = "token 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";
-	var username = "vishok2699";	
-	var filename = "response.html";
+	var repoInfo = getGITRepoInformation();
+	var email = repoInfo.email;
+	var token = repoInfo.token;
+	var username = repoInfo.username;
 
 	var url = "https://api.github.com/repos/vishok2699/Dynamic-Web-page-builder/contents/src/Response/" ;
 	var xhr = new XMLHttpRequest();
@@ -285,7 +239,7 @@ function getFilesFromGIT(){
 	      document.getElementById('outputhtml').innerHTML = dropdown;
 	   }};
 
-	var data = {
+	   var data = {
 	    "message": "Response HTML Constructed",
 	    "content": content ,
 	    "committer": {
@@ -299,7 +253,6 @@ function getFilesFromGIT(){
 	};
 
 	xhr.send(JSON.stringify(data) );
-
 }
 
 
