@@ -15,7 +15,7 @@ class Password extends React.Component {
       			 		{this.props.name}
       			 	</div>
       			 </span><pre></pre>
-      			 <input type="password" value={this.props.value} size={this.props.size} />
+						 <input type="password" value={this.props.value} size={this.props.size} />
       		</div>
           <br/>
         </div>
